@@ -23,6 +23,12 @@ def write_to_csv(data):
         writer.writerow(data)
 
 
+def write_to_csv2(data):
+    with open('data.csv', 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([data.get('email'), data.get('full_name'), data.get('message'), data.get('subject')])
+
+
 def write_to_database(data):
     f = open("database.txt", mode="a")
     f.write(f'''
@@ -43,6 +49,7 @@ def submit_form():
         write_to_database(data)
         print(data)
         write_to_csv(data)
+        write_to_csv2(data)
         return redirect('Thanku.html')
     else:
         return 'somethings wrong'
