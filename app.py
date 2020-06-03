@@ -3,7 +3,6 @@ import csv
 
 app = Flask(__name__)
 
-print(app)
 
 
 @app.route('/')
