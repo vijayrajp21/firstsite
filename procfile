@@ -1,1 +1,1 @@
-web: python app.py runserver 0.0.0.0:$PORT app:app --preload
+web: python app.py app: app
